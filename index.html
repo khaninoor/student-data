@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add/Remove Input Fields</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="bootstrap.css" />
+      </head>
+      <body>
+        <di class="header-sec p-5 ">
+          <h1 class="student">Student Data</h1>
+          <div id="input-container">
+            <div class="row p-2 ml-4">
+              <div>
+                <label for="Name">Name:</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  class="p-1 ml-1"
+                />
+              </div>
+              <div>
+                <label for="Degree">Degree:</label>
+                <input
+                  type="text"
+                  placeholder="Enter your degree"
+                  class="p-1"
+                />
+              </div>
+              <div>
+                <label for="CGPA">CGPA:</label>
+                <input type="text" placeholder="Enter your cgpa" class="p-1" />
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div>
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter text" />
+              </div>
+              <div>
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter text" />
+              </div>
+              <div>
+                <label for="">Name</label>
+                <input type="text" placeholder="Enter text" />
+              </div>
+              <button onclick="removeInput(this)" ">Remove</button>
+            </div> -->
+          </div>
+          <button onclick="addInput()" class="btn btn-primary mt-1 ml-4">
+            Add Input
+          </button>
+        </di
+        iv>
+        <script>
+          function addInput() {
+            const inputContainer = document.getElementById("input-container");
+            const newInputDiv = document.createElement("div");
+            newInputDiv.innerHTML = `
+                <label for="Name"> Name:</label>
+                <input type="text" placeholder="Enter your name" class="p-1" />
+                <label for="degree"> Degree:</label>
+                <input type="text" placeholder="Enter your degree" class="p-1 />
+                <label for="cgpa"> CGPA:</label>
+                <input type="text" placeholder="Enter your cgpa" class="p-1" />
+                <button onclick="removeInput(this)" class="btn btn-danger mb-1">Remove</button>
+            `;
+            inputContainer.appendChild(newInputDiv);
+          }
+          function removeInput(button) {
+            const inputContainer = document.getElementById("input-container");
+            const divToRemove = button.parentElement;
+            inputContainer.removeChild(divToRemove);
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
